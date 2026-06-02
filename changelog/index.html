@@ -660,9 +660,10 @@
 
     function checkPassword(){
 
+      ADMIN_PASSWORD:    ${{ secrets.ADMIN_PASSWORD }}
       const password = document.getElementById('passwordInput').value
 
-      if(password === "MCNG-2121"){
+      if(password === ADMIN_PASSWORD){
 
         document.getElementById('passwordModal').style.display = "none"
 
