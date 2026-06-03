@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-24 11:31 UTC",
+  "updated": "2026-06-03 13:03 UTC",
   "members": {
     "PVT": [],
     "PV2": [],
@@ -28,11 +28,7 @@
     "BG": [],
     "MG": [],
     "LTG": [],
-    "GEN": [
-      "Grg_Gamer"
-    ],
-    "GA": [
-      "Grg_Gamer"
-    ]
+    "GEN": [],
+    "GA": []
   }
 }
