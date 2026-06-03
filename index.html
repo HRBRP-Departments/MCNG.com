@@ -7,15 +7,40 @@
   <link rel="icon" type="image/png" href="mcng-web-images/favicon.png">
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
 
   <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 
   <!-- Lenis -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" crossorigin="anonymous"></script>
+
+  <!-- SECURITY: Content Security Policy
+    • script-src  : self + jsDelivr CDN + unsafe-inline (needed for inline <script> blocks)
+    • style-src   : self + Google Fonts + unsafe-inline (needed for inline <style> blocks)
+    • font-src    : Google Fonts static files only
+    • img-src     : self + both image CDNs used on this page + data URIs
+    • connect-src : self only (members.json fetch)
+    • frame/object: blocked entirely (anti-clickjacking)
+    • base-uri    : self (prevents base tag injection)
+    • form-action : self (no form hijacking)
+    NOTE: No referrer meta tag — browser default is safe and required for CDN images to load.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src  'self' https://cdn.jsdelivr.net 'unsafe-inline';
+    style-src   'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src    https://fonts.gstatic.com;
+    img-src     'self' https://img.freepik.com https://t3.ftcdn.net data:;
+    connect-src 'self';
+    frame-src   'none';
+    object-src  'none';
+    base-uri    'self';
+    form-action 'self';
+  ">
 
   <style>
     *{
@@ -746,10 +771,12 @@
     }
 
     footer{
-      padding:40px;
+      padding:40px 8%;
       text-align:center;
       border-top:1px solid rgba(255,255,255,.05);
       color:#7c847a;
+      font-size:.82rem;
+      line-height:2;
     }
 
     .footer-link{
@@ -1283,7 +1310,7 @@
 
   <section>
 
-    <a href="gallery" target="_blank" class="gallery-link">
+    <a href="gallery" target="_blank" rel="noopener noreferrer" class="gallery-link">
       <h2 class="section-title">Gallery</h2>
       <span class="gallery-arrow">→</span>
     </a>
@@ -1313,7 +1340,7 @@
 
       <a href="https://discord.gg/4858gnPT7J" 
          class="btn btn-primary join-btn"
-         target="_blank">
+         target="_blank" rel="noopener noreferrer">
         ENLIST TODAY
       </a>
 
@@ -1322,13 +1349,16 @@
   </section>
 
   <footer>
-    Designed By Mosa & Grg • Maplecliff National Guard • 
-    <a href="https://discord.gg/highrock" target="_blank" class="footer-link">
-      Highrock Border Roleplay
-    </a>
-    <a href="changelog" target="_blank" class="footer-link">
-       • Website Changelog
-    </a>
+    © 2026 Maplecliff National Guard. All rights reserved.<br>
+    Not affiliated with or endorsed by Roblox Corporation.<br>
+    Member display names shown on this site are sourced from our public Discord server and updated weekly.
+    If you wish to have your name removed, contact us on Discord.
+    This site does not collect, store, or share any personal information from visitors.<br>
+    <a href="https://discord.com/privacy" target="_blank" rel="noopener noreferrer" class="footer-link">Discord Privacy Policy</a>
+    &nbsp;•&nbsp;
+    <a href="https://discord.gg/highrock" target="_blank" rel="noopener noreferrer" class="footer-link">Highrock Border Roleplay</a>
+    &nbsp;•&nbsp;
+    <a href="changelog" target="_blank" rel="noopener noreferrer" class="footer-link">Website Changelog</a>
   </footer>
 
   <!-- RANK MEMBERS MODAL -->
@@ -1370,19 +1400,28 @@
 
     function openRankModal(rank){
       modalTitle.textContent = rank;
+      modalList.innerHTML = '';
 
       if(!membersData){
         modalUpdated.textContent = '';
-        modalList.innerHTML = '<li style="cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;">Members data not loaded yet. Run the GitHub Action first.</li>';
+        const li = document.createElement('li');
+        li.style.cssText = 'cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;';
+        li.textContent = 'Members data not loaded yet. Run the GitHub Action first.';
+        modalList.appendChild(li);
       } else {
         modalUpdated.textContent = 'Last updated: ' + (membersData.updated || '—');
         const list = membersData.members?.[rank] || [];
         if(list.length === 0){
-          modalList.innerHTML = '<li style="cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;">No members with this rank.</li>';
+          const li = document.createElement('li');
+          li.style.cssText = 'cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;';
+          li.textContent = 'No members with this rank.';
+          modalList.appendChild(li);
         } else {
-          modalList.innerHTML = list.map(name =>
-            `<li>${name}</li>`
-          ).join('');
+          list.forEach(name => {
+            const li = document.createElement('li');
+            li.textContent = name;
+            modalList.appendChild(li);
+          });
         }
       }
 
