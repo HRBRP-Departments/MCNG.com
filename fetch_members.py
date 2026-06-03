@@ -36,7 +36,7 @@ RANK_TO_ROLE = {
     "MG":   "Major General",
     "LTG":  "Lieutenant General",
     "GEN":  "General",
-    "GA":   "General",
+    "GA":   "General of the National Guard",
 }
 # ────────────────────────────────────────────────────────────────────────────
 
