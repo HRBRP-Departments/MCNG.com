@@ -492,9 +492,7 @@
 
       </div>
 
-      <!-- ADD NEW CHANGELOGS ABOVE THIS -->
-
-<div class="card">
+      <div class="card">
 
   <div class="card-content">
 
@@ -533,6 +531,10 @@
   </div>
 
 </div>
+
+
+      <!-- ADD NEW CHANGELOGS ABOVE THIS -->
+
 
 
     </div>
@@ -660,7 +662,8 @@
 
     function checkPassword(){
 
-      ADMIN_PASSWORD:    ${{ secrets.ADMIN_PASSWORD }}
+     if(password === "MCNG-2121"){
+
       const password = document.getElementById('passwordInput').value
 
       if(password === ADMIN_PASSWORD){
