@@ -6,16 +6,34 @@
   <title>MCNG | Maplecliff National Guard</title>
   <link rel="icon" type="image/png" href="mcng-web-images/favicon.png">
   
+  <!-- SECURITY: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src  'self' https://cdn.jsdelivr.net 'unsafe-inline';
+    style-src   'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src    https://fonts.gstatic.com;
+    img-src     'self' data:;
+    connect-src 'self';
+    frame-src   'none';
+    object-src  'none';
+    base-uri    'self';
+    form-action 'self';
+  ">
+
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
 
   <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 
   <!-- Lenis -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" crossorigin="anonymous"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous"></script>
 
   <style>
     *{
@@ -223,44 +241,27 @@
       overflow:hidden;
     }
 
-    .hero-bg{
+    /* HERO BACKGROUND — particles.js canvas */
+
+    #particles-js{
       position:absolute;
       inset:0;
-      background:
-      linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.4)),
-      url('https://img.freepik.com/free-vector/army-camouflage-vector-seamless-pattern-texture-military-camouflage-repeats-seamless-army-design-vector-background_1142-11146.jpg?semt=ais_hybrid&w=740&q=80?q=80&w=1920&auto=format&fit=crop') center/cover;
-      transform:scale(1.1);
+      z-index:1;
+      background:#060806;
+    }
+
+    #particles-js canvas{
+      display:block;
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
+      z-index:2;
       background:
-      radial-gradient(circle at center, transparent 0%, rgba(0,0,0,.55) 70%);
-    }
-
-    .particles{
-      position:absolute;
-      inset:0;
-      overflow:hidden;
-    }
-
-    .particle{
-      position:absolute;
-      width:2px;
-      height:2px;
-      background:rgba(255,255,255,.4);
-      border-radius:50%;
-      animation:float 10s linear infinite;
-    }
-
-    @keyframes float{
-      from{
-        transform:translateY(100vh);
-      }
-      to{
-        transform:translateY(-100vh);
-      }
+      linear-gradient(to top, rgba(6,8,6,.95) 0%, rgba(6,8,6,.3) 60%, transparent 100%),
+      radial-gradient(circle at center, transparent 0%, rgba(0,0,0,.45) 100%);
+      pointer-events:none;
     }
 
     .hero-content{
@@ -717,9 +718,8 @@
       position:absolute;
       inset:0;
       background:
-      linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.6)),
-      url('https://t3.ftcdn.net/jpg/07/76/98/10/360_F_776981069_8MmYerjdNVVZNFwS47UT2aYg7SLWZSlL.jpg?q=80&w=1920&auto=format&fit=crop') center/cover;
-      filter:brightness(.6);
+      linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.65)),
+      radial-gradient(ellipse at center, #1c2814 0%, #0a0f08 60%, #060806 100%);
       transform:scale(1.1);
     }
 
@@ -746,7 +746,7 @@
     }
 
     footer{
-      padding:40px;
+      padding:40px 8%;
       text-align:center;
       border-top:1px solid rgba(255,255,255,.05);
       color:#7c847a;
@@ -824,10 +824,8 @@
 
   <section class="hero">
 
-    <div class="hero-bg"></div>
+    <div id="particles-js"></div>
     <div class="hero-overlay"></div>
-
-    <div class="particles" id="particles"></div>
 
     <div class="hero-content">
       <div class="hero-tag">HIGHROCK BORDER ROLEPLAY</div>
@@ -1283,7 +1281,7 @@
 
   <section>
 
-    <a href="gallery" target="_blank" class="gallery-link">
+    <a href="gallery" target="_blank" rel="noopener noreferrer" class="gallery-link">
       <h2 class="section-title">Gallery</h2>
       <span class="gallery-arrow">→</span>
     </a>
@@ -1313,7 +1311,7 @@
 
       <a href="https://discord.gg/4858gnPT7J" 
          class="btn btn-primary join-btn"
-         target="_blank">
+         target="_blank" rel="noopener noreferrer">
         ENLIST TODAY
       </a>
 
@@ -1374,19 +1372,28 @@
 
     function openRankModal(rank){
       modalTitle.textContent = rank;
+      modalList.innerHTML = '';
 
       if(!membersData){
         modalUpdated.textContent = '';
-        modalList.innerHTML = '<li style="cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;">Members data not loaded yet. Run the GitHub Action first.</li>';
+        const li = document.createElement('li');
+        li.style.cssText = 'cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;';
+        li.textContent = 'Members data not loaded yet. Run the GitHub Action first.';
+        modalList.appendChild(li);
       } else {
         modalUpdated.textContent = 'Last updated: ' + (membersData.updated || '—');
         const list = membersData.members?.[rank] || [];
         if(list.length === 0){
-          modalList.innerHTML = '<li style="cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;">No members with this rank.</li>';
+          const li = document.createElement('li');
+          li.style.cssText = 'cursor:default;transform:none!important;color:#4e574b;font-style:italic;padding:10px 0;';
+          li.textContent = 'No members with this rank.';
+          modalList.appendChild(li);
         } else {
-          modalList.innerHTML = list.map(name =>
-            `<li>${name}</li>`
-          ).join('');
+          list.forEach(name => {
+            const li = document.createElement('li');
+            li.textContent = name;
+            modalList.appendChild(li);
+          });
         }
       }
 
@@ -1428,21 +1435,31 @@
 
     requestAnimationFrame(raf)
 
-    // PARTICLES
-
-    const particles = document.getElementById('particles')
-
-    for(let i=0;i<70;i++){
-
-      const particle = document.createElement('div')
-      particle.classList.add('particle')
-
-      particle.style.left = Math.random()*100 + '%'
-      particle.style.animationDuration = (Math.random()*10 + 8) + 's'
-      particle.style.opacity = Math.random()
-
-      particles.appendChild(particle)
-    }
+    // PARTICLES.JS — config from particlesjs-config.json
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 82, density: { enable: true, value_area: 800 } },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 1.5, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 125, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
 
     // GSAP
 
@@ -1474,14 +1491,6 @@
         ease:"power3.out"
       })
 
-    })
-
-    gsap.to(".hero-bg",{
-      scale:1,
-      scrollTrigger:{
-        trigger:".hero",
-        scrub:true
-      }
     })
 
     gsap.to(".join-bg",{
