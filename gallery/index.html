@@ -17,6 +17,9 @@
   <!-- Lenis -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
     *{
       margin:0;
@@ -75,8 +78,6 @@
       font-family:'Tenor Sans',sans-serif;
       letter-spacing:1px;
     }
-
-    /* NAVBAR */
 
     nav{
       position:fixed;
@@ -149,11 +150,30 @@
       width:100%;
     }
 
+    /* PARTICLES BACKGROUND */
+
+    #particles-js{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      background:transparent;
+    }
+
+    #particles-js canvas{
+      display:block;
+    }
+
     /* SECTION */
 
     section{
       position:relative;
       padding:160px 8% 120px;
+      z-index:2;
+      pointer-events:none;
+    }
+
+    section *{
+      pointer-events:auto;
     }
 
     .section-title{
@@ -335,6 +355,9 @@
       text-align:center;
       border-top:1px solid rgba(255,255,255,.05);
       color:#7c847a;
+      position:relative;
+      z-index:2;
+      background:var(--bg);
     }
 
     .footer-link{
@@ -371,6 +394,9 @@
 </head>
 
 <body>
+
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles-js"></div>
 
   <!-- NAV -->
 
@@ -554,6 +580,9 @@
   </footer>
 
   <script>
+
+    // PARTICLES.JS
+    particlesJS.load('particles-js', 'particlesjs-config.json', function(){});
 
     // LENIS
 
