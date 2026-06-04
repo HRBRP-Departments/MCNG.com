@@ -172,7 +172,16 @@
       pointer-events:none;
     }
 
-    section *{
+    /* Only actual interactive elements get pointer events —
+       container divs like .gallery-grid stay none so the
+       canvas receives hover/click events in empty space */
+    .photo-card,
+    .glass,
+    a,
+    button,
+    input,
+    .section-title,
+    .section-sub{
       pointer-events:auto;
     }
 
