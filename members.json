@@ -1,16 +1,15 @@
 {
-  "updated": "2026-06-07 10:48 UTC",
+  "updated": "2026-06-07 13:03 UTC",
   "members": {
-    "PVT": [
-      "PVT | ju446655XD | E-J44",
+    "PVT": [],
+    "PV2": [
+      "PV2 | Problemfoxking2 | E-J58",
       "PVT | katbnipr23 | E-J70"
     ],
-    "PV2": [
+    "PFC": [
       "PV2 | lakiaat | E-J68",
-      "PV2 | Problemfoxking2 | E-J58",
       "PVT | EpicDad2008 | E-J67"
     ],
-    "PFC": [],
     "SPC": [
       "SPC | bugobtainer124 | E-J65"
     ],
@@ -19,16 +18,13 @@
     ],
     "SGT": [],
     "SSG": [],
-    "SFC": [
-      "SFC | HeroAvantha | E-S62"
-    ],
+    "SFC": [],
     "MSG": [
       "MSG | Mrlion_Games | E-S28",
-      "MSG | Randa_Kaba22 | E-S56"
+      "MSG | Randa_Kaba22 | E-S56",
+      "SFC | HeroAvantha | E-S62"
     ],
-    "1SG": [
-      "CSM | grzecho2222 | E-S39"
-    ],
+    "1SG": [],
     "SGM": [],
     "CSM": [],
     "SMA": [],
@@ -36,14 +32,14 @@
       "WO1 | gamedev_eliaz I W | WO-W31"
     ],
     "CW2": [],
-    "CW3": [
+    "CW3": [],
+    "CW4": [
       "WO3 | zainemq21 | WO-W30"
     ],
-    "CW4": [],
-    "CW5": [],
-    "2LT": [
+    "CW5": [
       "2LT | Undogable1256 | CO-J35"
     ],
+    "2LT": [],
     "1LT": [
       "1LT | Proahmet10000"
     ],
