@@ -5,38 +5,51 @@ import os
 from datetime import datetime
 
 # ── CONFIG ──────────────────────────────────────────────────────────────────
-#Name needs to be the exact same as the discord role
+# Map each rank abbreviation to the EXACT Discord role name in your server.
 # If a rank doesn't have a Discord role, remove it from the dict.
 RANK_TO_ROLE = {
-    "PVT":  "PVT | Private",
-    "PV2":  "PV2 | Private Second Class",
-    "PFC":  "PFC | Private First Class",
-    "SPC":  "SPC | Specialist",
-    "CPL":  "CPL | Corporal",
-    "SGT":  "SGT | Sergeant",
-    "SSG":  "SSG | Staff Sergeant",
-    "SFC":  "SFC | Sergeant First Class",
-    "MSG":  "MSG | Master Sergeant",
-    "1SG":  "1SG | First Sergeant",
-    "SGM":  "SGN | Sergeant Major",
-    "CSM":  "CSM | Command Sergeant Major",
-    "SMA":  "SMA | Sergeant Major of the Army",
-    "WO1":  "WO 1 | Warrant Officer 1",
-    "CW2":  "CW2 | Chief Warrant Officer 2",
-    "CW3":  "CW3 | Chief Warrant Officer 3",
-    "CW4":  "CW4 | Chief Warrant Officer 4",
-    "CW5":  "CW5 | Chief Warrant Officer 5",
-    "2LT":  "2LT | Second Lieutenant",
-    "1LT":  "1LT | First Lieutenant",
-    "CPT":  "CPT | Captain",
-    "MAJ":  "MAJ | Major",
-    "LTC":  "LTC | Lieutenant Colonel",
-    "COL":  "COL | Colonel",
-    "BG":   "Brigadier General",
-    "MG":   "Major General",
-    "LTG":  "Lieutenant General",
-    "GEN":  "General",
-    "GA":   "General of the National Guard",
+    # Junior Enlisted
+    "PVT":  "PVT",
+    "PV2":  "PV2",
+    "PFC":  "PFC",
+    "SPC":  "SPC",
+    # Non-commissioned Officers
+    "CPL":  "CPL",
+    "SGT":  "SGT",
+    "SSG":  "SSG",
+    # Senior NCOs
+    "SFC":  "SFC",
+    "MSG":  "MSG",
+    "1SG":  "1SG",
+    "SGM":  "SGM",
+    "CSM":  "CSM",
+    "SMA":  "SMA",
+    # Warrant Officers
+    "WO1":  "WO1",
+    "CW2":  "CW2",
+    "CW3":  "CW3",
+    "CW4":  "CW4",
+    "CW5":  "CW5",
+    # Junior Officers
+    "2LT":  "2LT",
+    "1LT":  "1LT",
+    "CPT":  "CPT",
+    # Senior Officers
+    "MAJ":  "MAJ",
+    "LTC":  "LTC",
+    "COL":  "COL",
+    # General Officers
+    "BG":   "BG",
+    "MG":   "MG",
+    "LTG":  "LTG",
+    "GEN":  "GEN",
+    "GA":   "GA",
+}
+
+# ── NAME OVERRIDES ───────────────────────────────────────────────────────────
+# Format: "Discord display name": "Name to show on website"
+NAME_OVERRIDES = {
+    "CIV | Arrcqne": "GEN | Arrcqne",
 }
 # ────────────────────────────────────────────────────────────────────────────
 
@@ -62,7 +75,7 @@ async def on_ready():
     for rank, role_name in RANK_TO_ROLE.items():
         role = role_map.get(role_name)
         if role:
-            members = [m.display_name for m in guild.members if role in m.roles]
+            members = [NAME_OVERRIDES.get(m.display_name, m.display_name) for m in guild.members if role in m.roles]
             result[rank] = sorted(members, key=str.lower)
         else:
             result[rank] = []   # role not found – leave empty
