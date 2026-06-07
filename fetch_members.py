@@ -9,41 +9,41 @@ from datetime import datetime
 # If a rank doesn't have a Discord role, remove it from the dict.
 RANK_TO_ROLE = {
     # Junior Enlisted
-    "PVT":  "PVT",
-    "PV2":  "PV2",
-    "PFC":  "PFC",
-    "SPC":  "SPC",
+    "PVT":  "PVT | Private",
+    "PV2":  "PV2 | Private Second Class",
+    "PFC":  "PFC | Private First Class",
+    "SPC":  "SPC | Specialist",
     # Non-commissioned Officers
-    "CPL":  "CPL",
-    "SGT":  "SGT",
-    "SSG":  "SSG",
+    "CPL":  "CPL | Corporal",
+    "SGT":  "SGT | Sergeant",
+    "SSG":  "SSG | Staff Sergeant",
     # Senior NCOs
-    "SFC":  "SFC",
-    "MSG":  "MSG",
-    "1SG":  "1SG",
-    "SGM":  "SGM",
-    "CSM":  "CSM",
-    "SMA":  "SMA",
+    "SFC":  "SFC | Sergeant First Class",
+    "MSG":  "MSG | Master Sergeant",
+    "1SG":  "1SG | First Sergeant",
+    "SGM":  "SGN | Sergeant Major",
+    "CSM":  "CSM | Command Sergeant Major",
+    "SMA":  "SMA | Sergeant Major of the Army",
     # Warrant Officers
-    "WO1":  "WO1",
-    "CW2":  "CW2",
-    "CW3":  "CW3",
-    "CW4":  "CW4",
-    "CW5":  "CW5",
+    "WO1":  "WO 1 | Warrant Officer 1",
+    "CW2":  "CW2 | Chief Warrant Officer 2",
+    "CW3":  "CW3 | Chief Warrant Officer 3",
+    "CW4":  "CW4 | Chief Warrant Officer 4",
+    "CW5":  "CW5 | Chief Warrant Officer 5",
     # Junior Officers
-    "2LT":  "2LT",
-    "1LT":  "1LT",
-    "CPT":  "CPT",
+    "2LT":  "2LT | Second Lieutenant",
+    "1LT":  "1LT | First Lieutenant",
+    "CPT":  "CPT | Captain",
     # Senior Officers
-    "MAJ":  "MAJ",
-    "LTC":  "LTC",
-    "COL":  "COL",
+    "MAJ":  "MAJ | Major",
+    "LTC":  "LTC | Lieutenant Colonel",
+    "COL":  "COL | Colonel",
     # General Officers
-    "BG":   "BG",
-    "MG":   "MG",
-    "LTG":  "LTG",
-    "GEN":  "GEN",
-    "GA":   "GA",
+    "BG":   "Brigadier General",
+    "MG":   "Major General",
+    "LTG":  "Lieutenant General",
+    "GEN":  "General",
+    "GA":   "General of the National Guard",
 }
 
 # ── NAME OVERRIDES ───────────────────────────────────────────────────────────
@@ -70,6 +70,14 @@ async def on_ready():
 
     # Build role-name → role object map
     role_map = {r.name: r for r in guild.roles}
+
+    # DEBUG — prints all roles found in the server and total member count
+    print(f"✅  Connected to: {guild.name}")
+    print(f"👥  Total members visible: {len(guild.members)}")
+    print(f"🎭  Roles found in server:")
+    for r in sorted(guild.roles, key=lambda x: x.name):
+        print(f"     • '{r.name}' ({len(r.members)} members)")
+    print("─" * 50)
 
     result = {}
     for rank, role_name in RANK_TO_ROLE.items():
