@@ -838,8 +838,11 @@ ${code}`
 
     function copyCode(){
       const text = document.getElementById('generatedCode').textContent
-      navigator.clipboard.writeText(text)
-      alert("Code copied!")
+      const btn = document.querySelector('.copy-btn')
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied Code ✅'
+        setTimeout(() => { btn.textContent = 'Copy Code' }, 2500)
+      })
     }
 
     window.onclick = function(event){
