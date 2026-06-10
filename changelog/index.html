@@ -840,7 +840,7 @@ ${code}`
       const text = document.getElementById('generatedCode').textContent
       const btn = document.querySelector('.copy-btn')
       navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = 'Copied Code ✅'
+        btn.textContent = 'Copied Code ✓'
         setTimeout(() => { btn.textContent = 'Copy Code' }, 2500)
       })
     }
