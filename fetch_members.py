@@ -47,10 +47,10 @@ RANK_TO_ROLE = {
 }
 
 # ── NAME OVERRIDES ───────────────────────────────────────────────────────────
-# Format: "Discord display name": "Name to show on website"
+# Format: "UserID": "Name to show on website"
 NAME_OVERRIDES = {
-    "CIV | Arrcqne": "GEN | Arrcqne",
-    "Some roles Some talk": "MG | Youknowmeyoukno | CO-G18",
+    670646167448584192: "GEN | Arrcqne",
+    961265519980335124: "MG | Youknowmeyoukno | CO-G18"
 }
 # ────────────────────────────────────────────────────────────────────────────
 
