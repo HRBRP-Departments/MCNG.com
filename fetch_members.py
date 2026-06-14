@@ -49,8 +49,8 @@ RANK_TO_ROLE = {
 # ── NAME OVERRIDES ───────────────────────────────────────────────────────────
 # Format: "UserID": "Name to show on website"
 NAME_OVERRIDES = {
-    670646167448584192: "GEN | Arrcqne",
-    961265519980335124: "MG | Youknowmeyoukno | CO-G18"
+    "670646167448584192": "GEN | Arrcqne",
+    "961265519980335124": "MG | Youknowmeyoukno | CO-G18"
 }
 # ────────────────────────────────────────────────────────────────────────────
 
