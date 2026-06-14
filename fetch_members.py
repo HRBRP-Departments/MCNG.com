@@ -50,7 +50,7 @@ RANK_TO_ROLE = {
 # Format: "Discord display name": "Name to show on website"
 NAME_OVERRIDES = {
     "CIV | Arrcqne": "GEN | Arrcqne",
-    "Some roles Some talk": "MG | Youknowmeyoukno | CO-G18"
+    "Some roles Some talk": "MG | Youknowmeyoukno | CO-G18",
 }
 # ────────────────────────────────────────────────────────────────────────────
 
