@@ -1,91 +1,55 @@
 {
-  "updated": "2026-06-14 04:05 UTC",
+  "updated": "2026-06-14 11:50 UTC",
   "members": {
-    "PVT": [
-      "All roles no talk"
-    ],
+    "PVT": [],
     "PV2": [
-      "All roles no talk",
       "PV2 | Problemfoxking2 | E-J58",
       "PVT2 | katbnipr23 | E-J70"
     ],
     "PFC": [
-      "All roles no talk",
       "PV1 | lakiaat | E-J68"
     ],
     "SPC": [
-      "All roles no talk",
       "PVT | EpicDad2008 | E-J67",
       "SPC | bugobtainer124 | E-J65"
     ],
     "CPL": [
-      "All roles no talk",
       "LOA | Mosahela346 | E-N73"
     ],
-    "SGT": [
-      "All roles no talk"
-    ],
-    "SSG": [
-      "All roles no talk"
-    ],
-    "SFC": [
-      "All roles no talk"
-    ],
+    "SGT": [],
+    "SSG": [],
+    "SFC": [],
     "MSG": [
-      "All roles no talk",
       "MSG | Mrlion_Games | E-S28"
     ],
     "1SG": [
       "1SG | HeroAvantha | E-S62",
-      "All roles no talk",
       "MSG | Randa_Kaba22 | E-S56"
     ],
-    "SGM": [
-      "All roles no talk"
-    ],
-    "CSM": [
-      "All roles no talk"
-    ],
-    "SMA": [
-      "All roles no talk"
-    ],
-    "WO1": [
-      "All roles no talk"
-    ],
+    "SGM": [],
+    "CSM": [],
+    "SMA": [],
+    "WO1": [],
     "CW2": [
-      "All roles no talk",
       "CW2 | gamedev_eliaz | W | WO-W31"
     ],
     "CW3": [
-      "All roles no talk",
       "WO3 | zainemq21 | WO-W30"
     ],
-    "CW4": [
-      "All roles no talk"
-    ],
-    "CW5": [
-      "All roles no talk"
-    ],
+    "CW4": [],
+    "CW5": [],
     "2LT": [
-      "2LT | Undogable1256 | CO-J35",
-      "All roles no talk"
+      "2LT | Undogable1256 | CO-J35"
     ],
     "1LT": [
-      "1LT | Proahmet10000",
-      "All roles no talk"
+      "1LT | Proahmet10000"
     ],
-    "CPT": [
-      "All roles no talk"
-    ],
+    "CPT": [],
     "MAJ": [
-      "All roles no talk",
       "MAJ | Rascal_CT | CO-S49"
     ],
-    "LTC": [
-      "All roles no talk"
-    ],
+    "LTC": [],
     "COL": [
-      "All roles no talk",
       "COL | Grg_Gamer | CO-S47",
       "COL | samcio10000 | CO-S16"
     ],
@@ -94,14 +58,15 @@
       "BG | lazeoftheb | CO-G91"
     ],
     "MG": [
-      "MG | enderman90317 | CO-G24"
+      "MG | enderman90317 | CO-G24",
+      "Some roles Some talk"
     ],
     "LTG": [
       "LG | Chunkmonster199 | CO-G07",
       "LG | honzacipher | CO-G21"
     ],
     "GEN": [
-      "GEN | Arrcqne",
+      "CIV | Arrcqne",
       "GEN | CapybaraFor_L1fe"
     ],
     "GA": []
