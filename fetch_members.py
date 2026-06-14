@@ -73,9 +73,9 @@ async def on_ready():
     role_map = {r.name: r for r in guild.roles}
 
     # DEBUG — prints all roles found in the server and total member count
-    print(f"✅  Connected to: {guild.name}")
-    print(f"👥  Total members visible: {len(guild.members)}")
-    print(f"🎭  Roles found in server:")
+    print(f"  Connected to: {guild.name}")
+    print(f"  Total members visible: {len(guild.members)}")
+    print(f"  Roles found in server:")
     for r in sorted(guild.roles, key=lambda x: x.name):
         print(f"     • '{r.name}' ({len(r.members)} members)")
     print("─" * 50)
@@ -84,7 +84,7 @@ async def on_ready():
     for rank, role_name in RANK_TO_ROLE.items():
         role = role_map.get(role_name)
         if role:
-            members = [NAME_OVERRIDES.get(m.display_name, m.display_name) for m in guild.members if role in m.roles]
+            members = [NAME_OVERRIDES.get(str(m.id), m.display_name) for m in guild.members if role in m.roles]
             result[rank] = sorted(members, key=str.lower)
         else:
             result[rank] = []   # role not found – leave empty
@@ -97,7 +97,7 @@ async def on_ready():
     with open("members.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    print(f"✅  Saved members.json  ({datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')})")
+    print(f"  Saved members.json  ({datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')})")
     await client.close()
 
 client.run(TOKEN)
