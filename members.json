@@ -1,23 +1,26 @@
 {
-  "updated": "2026-06-21 04:13 UTC",
+  "updated": "2026-06-28 03:51 UTC",
   "members": {
     "PVT": [
-      "PVT | EasternB7 | E-J02"
+      "CIV | BlueFireArrow13 | E-J03",
+      "PVT | Jackbluere | E-J04"
     ],
     "PV2": [
-      "PV2 | Problemfoxking2 | E-J58",
-      "PVT2 | katbnipr23 | E-J70"
+      "PV2 | EasternB7 | E-J02",
+      "PV2 | Problemfoxking2 | E-J58"
     ],
-    "PFC": [],
+    "PFC": [
+      "PFC | katbnipr23 | E-J70"
+    ],
     "SPC": [
-      "PV1 | lakiaat | E-J68",
       "SPC | bugobtainer124 | E-J65"
     ],
     "CPL": [
-      "CPL | EpicDad2008 | E-N67",
       "LOA | Mosahela346 | E-N73"
     ],
-    "SGT": [],
+    "SGT": [
+      "SGT | EpicDad2008 | E-N67"
+    ],
     "SSG": [],
     "SFC": [],
     "MSG": [
@@ -26,18 +29,17 @@
     "1SG": [
       "MSG | Mrlion_Games | E-S28"
     ],
-    "SGM": [
-      "SGN | HeroAvantha | E-S62",
-      "SGN | Randa_Kaba22 | E-S56"
+    "SGM": [],
+    "CSM": [
+      "CSM | HeroAvantha | E-S62",
+      "CSM | Randa_Kaba22 | E-S56"
     ],
-    "CSM": [],
     "SMA": [],
     "WO1": [],
-    "CW2": [
-      "CW2 | gamedev_eliaz | WO-W31",
-      "WO3 | zainemq21 | WO-W30"
+    "CW2": [],
+    "CW3": [
+      "CW3 | gamedev_eliaz | WO-W31"
     ],
-    "CW3": [],
     "CW4": [],
     "CW5": [],
     "2LT": [
@@ -49,7 +51,7 @@
     "CPT": [],
     "MAJ": [],
     "LTC": [
-      "MAJ | Rascal_CT | CO-S49"
+      "LTC | Rascal_CT | CO-S49"
     ],
     "COL": [
       "COL | Grg_Gamer | CO-S47",
