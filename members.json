@@ -1,35 +1,38 @@
 {
-  "updated": "2026-07-05 03:24 UTC",
+  "updated": "2026-07-12 02:45 UTC",
   "members": {
-    "PVT": [],
+    "PVT": [
+      "PVT | VNAKE12345 | E-J20",
+      "PVT | vrealeenek | E-J14"
+    ],
     "PV2": [
       "PV2 | BlueFireArrow13 | E-J03",
       "PV2 | EasternB7 | E-J02"
     ],
     "PFC": [
-      "PFC | katbnipr23 | E-J70",
-      "PFC | Problemfoxking2 | E-"
+      "PFC | Problemfoxking2 | E-J58"
     ],
     "SPC": [],
     "CPL": [
       "LOA | Mosahela346 | E-N73"
     ],
     "SGT": [],
-    "SSG": [
-      "SSG | EpicDad2008 | E-N67"
+    "SSG": [],
+    "SFC": [
+      "SFC | EpicDad2008 | E-S67"
     ],
-    "SFC": [],
-    "MSG": [
+    "MSG": [],
+    "1SG": [
       "1SG | Mrlion_Games | E-S28"
     ],
-    "1SG": [],
     "SGM": [],
     "CSM": [],
     "SMA": [
-      "SMA | HeroAvantha | E-S62",
       "SMA | Randa_Kaba22 | E-S56"
     ],
-    "WO1": [],
+    "WO1": [
+      "SMA | HeroAvantha | WO-W62"
+    ],
     "CW2": [],
     "CW3": [
       "CW3 | gamedev_eliaz | WO-W31"
@@ -37,10 +40,11 @@
     "CW4": [],
     "CW5": [],
     "2LT": [
-      "1LT | Proahmet10000",
       "2LT | Undogable1256 | CO-J35"
     ],
-    "1LT": [],
+    "1LT": [
+      "1LT | Proahmet10000"
+    ],
     "CPT": [],
     "MAJ": [],
     "LTC": [],
@@ -61,10 +65,7 @@
       "LG | Chunkmonster199 | CO-G07",
       "LG | honzacipher | CO-G21"
     ],
-    "GEN": [
-      "GEN | Arrcqne",
-      "GEN | CapybaraFor_L1fe"
-    ],
+    "GEN": [],
     "GA": []
   }
 }
