@@ -1,8 +1,9 @@
 {
-  "updated": "2026-07-19 02:42 UTC",
+  "updated": "2026-07-26 02:45 UTC",
   "members": {
     "PVT": [
       "PV2 | BlueFireArrow13 | E-J03",
+      "PVT | Jacksonthegreat561",
       "PVT | VNAKE12345 | E-J20"
     ],
     "PV2": [],
@@ -17,9 +18,7 @@
     "SGT": [],
     "SSG": [],
     "SFC": [],
-    "MSG": [
-      "MSG | EpicDad2008 | E-S67"
-    ],
+    "MSG": [],
     "1SG": [
       "1SG | Mrlion_Games | E-S28"
     ],
@@ -27,27 +26,29 @@
     "CSM": [],
     "SMA": [],
     "WO1": [
-      "WO1 | HeroAvantha | WO-W62",
       "WO1 | Randa_Kaba22 | WO-W56"
     ],
-    "CW2": [],
+    "CW2": [
+      "CW2 | HeroAvantha | WO-W62"
+    ],
     "CW3": [
       "CW3 | gamedev_eliaz | WO-W31"
     ],
     "CW4": [],
-    "CW5": [],
-    "2LT": [
+    "CW5": [
       "2LT | Undogable1256 | CO-J35"
     ],
+    "2LT": [],
     "1LT": [
       "1LT | Proahmet10000"
     ],
     "CPT": [],
     "MAJ": [],
-    "LTC": [],
+    "LTC": [
+      "COL | Rascal_CT | CO-S15"
+    ],
     "COL": [
       "COL | Grg_Gamer | CO-S47",
-      "COL | Rascal_CT | CO-S15",
       "COL | samcio10000 | CO-S16"
     ],
     "BG": [
